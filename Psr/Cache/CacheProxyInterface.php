@@ -21,6 +21,16 @@ interface CacheProxyInterface
     public function setCacheDriver(DriverInterface $cacheDriver);
 
     /**
+     * Set the custom serializer function which will be used when the
+     * cache driver does not support serialization
+     *
+     * @param callable $serializer
+     *
+     * @return CacheProxyInterface
+     */
+    public function setSerializer($serializer);
+
+    /**
      * Get the default TTL of the instance in seconds
      *
      * @return int
